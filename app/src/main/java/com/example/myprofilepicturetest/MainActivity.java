@@ -64,7 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         topIcon = findViewById(R.id.topicon);
         String imagePath = loadDataFromSharedPreferences();
         if ( imagePath != null ) {
-            Glide.with(this).load(decodeBase64(imagePath)).into(topIcon);
+            Glide.
+                    with(this).
+                    load(decodeBase64(imagePath)).
+                    placeholder(R.drawable.user).
+                    into(topIcon);
         }
 
         permissionlistener = new PermissionListener() {
